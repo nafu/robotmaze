@@ -31,3 +31,7 @@ Maze.prototype.setEnd = function(x, y) {
   this.endX = x;
   this.endY = y;
 }
+
+Maze.prototype.setWall = function(x, y, direction) {
+  this.spaces[x][y].setWall(direction);
+}
