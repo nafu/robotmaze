@@ -41,3 +41,20 @@ Robot.prototype.turnLeft = function() {
   this.orientation = lefts[this.orientation];
   return true;
 }
+
+Robot.prototype.moveForward = function() {
+  switch (this.orientation) {
+    case "north":
+      this.y += 1;
+      break;
+    case "east":
+      this.x += 1;
+      break;
+    case "south":
+      this.y -= 1;
+      break;
+    case "west":
+      this.x -= 1;
+      break;
+  }
+}
