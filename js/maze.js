@@ -16,7 +16,7 @@ function Maze(width, height) {
   for (x=1; x <= width; x += 1) {
     this.spaces[x] = [];
     for (y=1; y <= height; y += 1) {
-      this.spaces[x][y] = "(" + x + "," + y + ")";
+      this.spaces[x][y] = new MazeSpace();
     }
   }
 }
