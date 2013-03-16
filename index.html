@@ -38,7 +38,9 @@
     m.setWall(7,3,"north");
     m.setWall(7,4,"north");
 
-    var i = new RobotMazeInterface(null,m,"#page");
+    r = new Robot();
+
+    var i = new RobotMazeInterface(r,m,"#page");
     $(document).ready(function() {
       i.render();
     });
