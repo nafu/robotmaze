@@ -4,11 +4,20 @@
   <script type="text/javascript" src="js/robot.js"></script>
   <script type="text/javascript" src="js/maze.js"></script>
   <script type="text/javascript" src="js/mazespace.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/robotmazeinterface.js"></script>
+  <link type="text/css" rel="stylesheet" href="css/robotmazeinterface.css">
+  <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
   <script>
     m = new Maze(7, 5);
     m.setStart(1,1,"north");
     m.setEnd(7,1);
     m.setWall(1,1,"east");
+
+    var i = new RobotMazeInterface(null,m,"#page");
+    $(document).ready(function() {
+      i.render();
+    });
   </script>
 </head>
 <body>
