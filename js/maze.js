@@ -99,7 +99,7 @@ Maze.prototype.canMove = function (x, y, direction) {
     south: "north",
     west: "east"
   };
-  if (this.spaces[forwardX][forwardY][opposites]) {
+  if (this.spaces[forwardX][forwardY][opposites[direction]]) {
     return false;
   }
 
