@@ -43,6 +43,10 @@ Robot.prototype.turnLeft = function() {
 }
 
 Robot.prototype.moveForward = function() {
+  if (!this.canMoveForward()) {
+    return false;
+  }
+
   switch (this.orientation) {
     case "north":
       this.y += 1;
@@ -57,4 +61,12 @@ Robot.prototype.moveForward = function() {
       this.x -= 1;
       break;
   }
+  return true;
+}
+
+Robot.prototype.canMoveForward = function() {
+  if (!this.maze) {
+    return false;
+  }
+  return this.maze.canMove(this.x, this.y, this.orientation);
 }
