@@ -70,3 +70,16 @@ Robot.prototype.canMoveForward = function() {
   }
   return this.maze.canMove(this.x, this.y, this.orientation);
 }
+
+Robot.prototype.exitMaze = function() {
+  if (this.maze) {
+    while(this.x !== this.maze.endX || this.y !== this.maze.endY) {
+      if (this.canMoveForward()) {
+        this.moveForward();
+        this.turnLeft();
+      } else {
+        this.turnRight();
+      }
+    }
+  }
+}
